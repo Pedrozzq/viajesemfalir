@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -24,6 +24,7 @@
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
                         serif: ['Cinzel', 'serif'],
+                        brand: ['Poppins', 'sans-serif'], // Fonte da logo (título e slogan)
                     }
                 }
             }
@@ -285,7 +286,7 @@
 
         <div id="preloader-brand" class="flex flex-col items-center opacity-0 transition-opacity duration-700">
             <img src="https://i.imgur.com/vhPng62.jpeg" alt="Viaje Sem Falir" class="preloader-logo mb-5">
-            <h1 class="font-serif text-lg tracking-[0.3em] text-gold-light uppercase drop-shadow-md">Viaje Sem Falir</h1>
+            <h1 class="font-brand font-extrabold text-lg tracking-[0.15em] text-gold-light uppercase drop-shadow-md">Viaje Sem Falir</h1>
             <p class="text-[9px] text-white/40 tracking-[0.2em] mt-2 font-light">EXPERIÊNCIA PREMIUM</p>
 
             <!-- Barra de carregamento dourada -->
@@ -337,7 +338,7 @@
                 </div>
 
                 <!-- Títulos -->
-                <h1 class="font-serif text-2xl sm:text-3xl font-bold mb-3 text-gradient-gold drop-shadow-lg">
+                <h1 class="font-brand font-black text-2xl sm:text-4xl tracking-wide uppercase mb-3 text-gradient-gold drop-shadow-lg">
                     Viaje Sem Falir
                 </h1>
                 <h2 class="text-sm sm:text-base font-medium text-ice mb-2 leading-relaxed opacity-90 drop-shadow-md">
@@ -438,13 +439,24 @@
                         <p class="text-[10px] text-ice/50 mt-0.5 leading-tight">Acompanhe dicas e inspirações de viagem.</p>
                     </div>
                 </a>
+
+                <!-- Botão 9: Site Oficial -->
+                <a href="#" target="_blank" class="premium-link-card flex items-center p-3 w-full reveal group" style="transition-delay: 500ms;">
+                    <div class="icon-box w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-gold">
+                        <i class="fa-solid fa-globe text-sm transition-transform group-hover:scale-110"></i>
+                    </div>
+                    <div class="ml-3 flex-1 text-left">
+                        <h3 class="font-semibold text-ice text-sm group-hover:text-gold-light transition-colors">Site Oficial</h3>
+                        <p class="text-[10px] text-ice/50 mt-0.5 leading-tight">Acesse nosso site e conheça todos os serviços.</p>
+                    </div>
+                </a>
             </div>
 
             <!-- SEÇÃO DE DIFERENCIAIS -->
             <div class="mb-12 reveal">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-gold/30"></div>
-                    <h3 class="font-serif text-gold-light text-sm tracking-widest uppercase">Por que nos escolher</h3>
+                    <h3 class="font-brand text-gold-light text-sm tracking-widest uppercase">Por que nos escolher</h3>
                     <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gold/30"></div>
                 </div>
 
@@ -484,7 +496,7 @@
             <div class="mb-6 reveal">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-gold/30"></div>
-                    <h3 class="font-serif text-gold-light text-sm tracking-widest uppercase">Destinos de Destaque</h3>
+                    <h3 class="font-brand text-gold-light text-sm tracking-widest uppercase">Destinos de Destaque</h3>
                     <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gold/30"></div>
                 </div>
 
@@ -492,44 +504,74 @@
                     <div class="dest-card snap-center shrink-0">
                         <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80" alt="Paris" loading="lazy">
                         <div class="dest-content">
-                            <h4 class="font-serif font-bold text-white text-base drop-shadow-md">Paris</h4>
+                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Paris</h4>
                             <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Roteiro Europeu</p>
                         </div>
                     </div>
                     <div class="dest-card snap-center shrink-0">
-                        <img src="https://images.unsplash.com/photo-1510008436154-b3b3a32dc51d?auto=format&fit=crop&w=400&q=80" alt="Cancún" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1552074284-5e88ef1aef18?auto=format&fit=crop&w=400&q=80" alt="Cancún" loading="lazy">
                         <div class="dest-content">
-                            <h4 class="font-serif font-bold text-white text-base drop-shadow-md">Cancún</h4>
+                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Cancún</h4>
                             <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Praia dos Sonhos</p>
                         </div>
                     </div>
                     <div class="dest-card snap-center shrink-0">
                         <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80" alt="Dubai" loading="lazy">
                         <div class="dest-content">
-                            <h4 class="font-serif font-bold text-white text-base drop-shadow-md">Dubai</h4>
+                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Dubai</h4>
                             <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Luxo e Inovação</p>
                         </div>
                     </div>
                     <div class="dest-card snap-center shrink-0">
                         <img src="https://images.unsplash.com/photo-1582650893098-904323eaf098?auto=format&fit=crop&w=400&q=80" alt="Caribe" loading="lazy">
                         <div class="dest-content">
-                            <h4 class="font-serif font-bold text-white text-base drop-shadow-md">Caribe</h4>
+                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Caribe</h4>
                             <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Paraíso Tropical</p>
                         </div>
                     </div>
                     <div class="dest-card snap-center shrink-0">
                         <img src="https://images.unsplash.com/photo-1575043867664-8ee770517596?auto=format&fit=crop&w=400&q=80" alt="Orlando" loading="lazy">
                         <div class="dest-content">
-                            <h4 class="font-serif font-bold text-white text-base drop-shadow-md">Orlando</h4>
+                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Orlando</h4>
                             <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Viagem em Família</p>
                         </div>
                     </div>
                     <div class="dest-card snap-center shrink-0">
                         <img src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=400&q=80" alt="Cruzeiros" loading="lazy">
                         <div class="dest-content">
-                            <h4 class="font-serif font-bold text-white text-base drop-shadow-md">Cruzeiros</h4>
+                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Cruzeiros</h4>
                             <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Experiência em Alto-mar</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEÇÃO CTA FINAL -->
+            <div class="reveal mb-10">
+                <div class="relative overflow-hidden rounded-2xl p-6 sm:p-8 text-center border border-gold/25 bg-gradient-to-br from-navy-800/70 to-ocean/20 backdrop-blur-md shadow-[0_15px_40px_rgba(0,0,0,0.45)]">
+                    <div class="absolute inset-0 bg-gold/5 opacity-40 pointer-events-none"></div>
+
+                    <h3 class="relative font-brand text-[11px] sm:text-xl font-bold text-gradient-gold mb-4 drop-shadow-md whitespace-nowrap">
+                        Sua próxima viagem já pode começar hoje.
+                    </h3>
+
+                    <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" rel="noopener noreferrer"
+                       class="btn-whatsapp-premium relative inline-flex items-center justify-center gap-2 px-6 py-3 w-full sm:w-auto mx-auto mb-6">
+                        <i class="fa-brands fa-whatsapp text-xl text-white"></i>
+                        <span class="font-bold text-sm text-white">Falar com um especialista</span>
+                    </a>
+
+                    <div class="relative flex items-center gap-3 mb-5">
+                        <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-gold/30"></div>
+                        <i class="fa-solid fa-plane text-gold text-xs"></i>
+                        <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gold/30"></div>
+                    </div>
+
+                    <!-- SLOGAN -->
+                    <div class="relative font-brand tracking-[0.2em] uppercase leading-relaxed">
+                        <p class="text-ice/80 text-sm sm:text-base font-bold">Viaje Mais</p>
+                        <p class="text-ice/80 text-sm sm:text-base font-bold">Viaje Melhor</p>
+                        <p class="text-gradient-gold text-lg sm:text-2xl font-black mt-1">Viaje Sem Falir</p>
                     </div>
                 </div>
             </div>
@@ -537,7 +579,7 @@
             <!-- FOOTER -->
             <footer class="text-center mt-8 pt-6 border-t border-white/10 reveal">
                 <img src="https://i.imgur.com/vhPng62.jpeg" alt="Logo" class="w-10 h-10 mx-auto rounded-full border border-gold/50 opacity-50 mb-3 grayscale">
-                <p class="text-sm text-gold-light font-serif italic mb-4 drop-shadow-sm">
+                <p class="text-sm text-gold-light font-brand italic mb-4 drop-shadow-sm">
                     Viaje Sem Falir — sua próxima experiência começa com uma escolha inteligente.
                 </p>
                 <div class="flex flex-wrap justify-center gap-x-3 gap-y-2 text-[9px] uppercase tracking-widest text-ice/40 font-semibold">
@@ -553,6 +595,9 @@
                     <span class="text-gold/50">•</span>
                     <span>Intercâmbio</span>
                 </div>
+                <p class="mt-5 text-[9px] uppercase tracking-widest text-ice/30 font-semibold">
+                    © 2026 Viaje Sem Falir — Todos os direitos reservados.
+                </p>
             </footer>
         </div>
     </main>

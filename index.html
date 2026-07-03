@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Viaje Sem Falir</title>
+    <title>Viaje Sem Falir | Experiências Premium</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -264,6 +264,27 @@
         .dest-card:hover img { transform: scale(1.1); }
         .dest-content { position: absolute; bottom: 0; padding: 0.8rem; z-index: 2; }
 
+        /* Setas de navegação dos destinos */
+        .dest-arrow {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            z-index: 5; width: 38px; height: 38px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(10, 21, 47, 0.8); color: #D4AF37;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+            cursor: pointer; transition: all 0.3s ease;
+        }
+        .dest-arrow:hover { background: #D4AF37; color: #060B19; transform: translateY(-50%) scale(1.08); }
+        .dest-arrow:active { transform: translateY(-50%) scale(0.95); }
+        .dest-arrow--left { left: -8px; }
+        .dest-arrow--right { right: -8px; }
+        @media (max-width: 480px) {
+            .dest-arrow { width: 32px; height: 32px; }
+            .dest-arrow--left { left: 0; }
+            .dest-arrow--right { right: 0; }
+        }
+
         .text-gradient-gold { background: linear-gradient(to right, #F4E0A3, #D4AF37, #F4E0A3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: textShine 5s linear infinite; }
         @keyframes textShine { to { background-position: 200% center; } }
 
@@ -287,7 +308,7 @@
         <div id="preloader-brand" class="flex flex-col items-center opacity-0 transition-opacity duration-700">
             <img src="https://i.imgur.com/vhPng62.jpeg" alt="Viaje Sem Falir" class="preloader-logo mb-5">
             <h1 class="font-brand font-extrabold text-lg tracking-[0.15em] text-gold-light uppercase drop-shadow-md">Viaje Sem Falir</h1>
-            <p class="text-[9px] text-white/40 tracking-[0.2em] mt-2 font-light"> Viaje mais, Viaje melhor, Viaje Sem Falir</p>
+            <p class="text-[9px] text-white/40 tracking-[0.2em] mt-2 font-light">EXPERIÊNCIA PREMIUM</p>
 
             <!-- Barra de carregamento dourada -->
             <div class="load-bar">
@@ -439,17 +460,6 @@
                         <p class="text-[10px] text-ice/50 mt-0.5 leading-tight">Acompanhe dicas e inspirações de viagem.</p>
                     </div>
                 </a>
-
-                <!-- Botão 9: Site Oficial -->
-                <a href="#" target="_blank" class="premium-link-card flex items-center p-3 w-full reveal group" style="transition-delay: 500ms;">
-                    <div class="icon-box w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-gold">
-                        <i class="fa-solid fa-globe text-sm transition-transform group-hover:scale-110"></i>
-                    </div>
-                    <div class="ml-3 flex-1 text-left">
-                        <h3 class="font-semibold text-ice text-sm group-hover:text-gold-light transition-colors">Site Oficial</h3>
-                        <p class="text-[10px] text-ice/50 mt-0.5 leading-tight">Acesse nosso site e conheça todos os serviços.</p>
-                    </div>
-                </a>
             </div>
 
             <!-- SEÇÃO DE DIFERENCIAIS -->
@@ -500,50 +510,114 @@
                     <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-gold/30"></div>
                 </div>
 
-                <div class="destination-scroll flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4">
-                    <div class="dest-card snap-center shrink-0">
-                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80" alt="Paris" loading="lazy">
-                        <div class="dest-content">
-                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Paris</h4>
-                            <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Roteiro Europeu</p>
+                <div class="relative">
+                    <!-- Seta esquerda -->
+                    <button type="button" id="dest-prev" aria-label="Destino anterior" class="dest-arrow dest-arrow--left">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div id="destination-scroll" class="destination-scroll flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth px-1">
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80" alt="Paris" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Paris</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Roteiro Europeu</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1552074284-5e88ef1aef18?auto=format&fit=crop&w=400&q=80" alt="Cancún" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Cancún</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Praia dos Sonhos</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80" alt="Dubai" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Dubai</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Luxo e Inovação</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=400&q=80" alt="Caribe" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Caribe</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Paraíso Tropical</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1597466599360-3b9775841aec?auto=format&fit=crop&w=400&q=80" alt="Orlando" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Orlando</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Viagem em Família</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=400&q=80" alt="Cruzeiros" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Cruzeiros</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Experiência em Alto-mar</p>
+                            </div>
+                        </div>
+
+                        <!-- Novos destinos -->
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=400&q=80" alt="Roma" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Roma</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">História e Arte</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=400&q=80" alt="Nova York" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Nova York</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Cidade que Não Dorme</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=400&q=80" alt="Maldivas" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Maldivas</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Luxo Paradisíaco</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=400&q=80" alt="Tóquio" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Tóquio</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Cultura e Tecnologia</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Santorini" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Santorini</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Pôr do Sol Grego</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?auto=format&fit=crop&w=400&q=80" alt="Buenos Aires" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Buenos Aires</h4>
+                                <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Charme Portenho</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="dest-card snap-center shrink-0">
-                        <img src="https://images.unsplash.com/photo-1552074284-5e88ef1aef18?auto=format&fit=crop&w=400&q=80" alt="Cancún" loading="lazy">
-                        <div class="dest-content">
-                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Cancún</h4>
-                            <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Praia dos Sonhos</p>
-                        </div>
-                    </div>
-                    <div class="dest-card snap-center shrink-0">
-                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80" alt="Dubai" loading="lazy">
-                        <div class="dest-content">
-                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Dubai</h4>
-                            <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Luxo e Inovação</p>
-                        </div>
-                    </div>
-                    <div class="dest-card snap-center shrink-0">
-                        <img src="https://images.unsplash.com/photo-1582650893098-904323eaf098?auto=format&fit=crop&w=400&q=80" alt="Caribe" loading="lazy">
-                        <div class="dest-content">
-                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Caribe</h4>
-                            <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Paraíso Tropical</p>
-                        </div>
-                    </div>
-                    <div class="dest-card snap-center shrink-0">
-                        <img src="https://images.unsplash.com/photo-1575043867664-8ee770517596?auto=format&fit=crop&w=400&q=80" alt="Orlando" loading="lazy">
-                        <div class="dest-content">
-                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Orlando</h4>
-                            <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Viagem em Família</p>
-                        </div>
-                    </div>
-                    <div class="dest-card snap-center shrink-0">
-                        <img src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=400&q=80" alt="Cruzeiros" loading="lazy">
-                        <div class="dest-content">
-                            <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Cruzeiros</h4>
-                            <p class="text-[9px] text-gold-light uppercase tracking-wider font-semibold">Experiência em Alto-mar</p>
-                        </div>
-                    </div>
+
+                    <!-- Seta direita -->
+                    <button type="button" id="dest-next" aria-label="Próximo destino" class="dest-arrow dest-arrow--right">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
+
+                <!-- Botão para o site oficial -->
+                <a href="https://www.viajesemfalir.com.br" target="_blank" rel="noopener noreferrer"
+                   class="premium-link-card group mt-5 flex items-center justify-center gap-2 p-3.5 w-full">
+                    <i class="fa-solid fa-globe text-gold text-sm transition-transform group-hover:scale-110"></i>
+                    <span class="font-brand font-bold text-sm uppercase tracking-widest text-ice group-hover:text-gold-light transition-colors">Mais informações em nosso site</span>
+                    <i class="fa-solid fa-arrow-right text-gold text-xs transition-transform group-hover:translate-x-1"></i>
+                </a>
             </div>
 
             <!-- SEÇÃO CTA FINAL -->
@@ -615,6 +689,16 @@
                 p.style.animationDuration = (Math.random()*15+10)+'s';
                 p.style.animationDelay = Math.random()*5+'s';
                 container.appendChild(p);
+            }
+
+            // Navegação dos destinos (setas)
+            const scroller = document.getElementById('destination-scroll');
+            const prevBtn = document.getElementById('dest-prev');
+            const nextBtn = document.getElementById('dest-next');
+            if (scroller && prevBtn && nextBtn) {
+                const step = () => Math.max(scroller.clientWidth * 0.8, 160);
+                prevBtn.addEventListener('click', () => scroller.scrollBy({ left: -step(), behavior: 'smooth' }));
+                nextBtn.addEventListener('click', () => scroller.scrollBy({ left: step(), behavior: 'smooth' }));
             }
 
             // Timeline Preloader
